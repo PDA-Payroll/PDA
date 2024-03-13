@@ -7,9 +7,9 @@
 
   outputs = {
     self,
-    systems,
-    nixpkgs,
     flake-utils,
+    nixpkgs,
+    systems,
     ...
   } @ inputs: 
   flake-utils.lib.eachDefaultSystem (system:
@@ -43,10 +43,11 @@
         src = ./pda;
         buildInputs = with pkgs; [ nodejs ];
         buildPhase = ''
+          mkdir $out/
           npm install
         '';
         installPhase = ''
-          cp -r ./node_modules $out/
+          cp -r ./. $out/
         '';
       };
     };
