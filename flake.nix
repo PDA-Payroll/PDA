@@ -37,5 +37,18 @@
         '';
       };
     };
+    packages = rec {
+      default = pkgs.stdenv.mkDerivation {
+        name = "PDA";
+        src = ./pda;
+        buildInputs = with pkgs; [ nodejs ];
+        buildPhase = ''
+          npm install
+        '';
+        installPhase = ''
+          cp -r ./node_modules $out/
+        '';
+      };
+    };
   });
 }
