@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/drnfc/Employment-Portal-Project/issues"
   },
-  "homepage": "https://github.com/drnfc/Employment-Portal-Project#readme"
+  "homepage": "https://github.com/drnfc/Employment-Portal-Project#readme",
+  "dependencies": {
+    "postgres": "^3.4.3"
+  }
 }
