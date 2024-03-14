@@ -42,6 +42,7 @@
     #docker container
     packages.oci = pkgs.dockerTools.buildImage {
       name = "PDA";
+      tag = "latest";
       config = {
         cmd = [ "${packages.entrypoint}/bin/entrypoint" ];
         Labels = {
