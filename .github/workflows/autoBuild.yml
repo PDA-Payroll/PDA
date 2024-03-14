@@ -28,7 +28,6 @@ jobs:
         usesrname: ${{github.actor}}
         password: ${{secrets.PAT}}
 
-    - name: 'Build Images'
     - run: nix flake check
     - run: nix build 
     - run: nix build .#oci
