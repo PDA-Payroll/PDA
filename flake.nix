@@ -34,6 +34,14 @@
       ];
     };
 
+    nix.settings = {
+      substituters = [
+        "https://pdapayroll.cachix.org"
+      ];
+      trusted-public-keys = [
+        "pdapayroll.cachix.org-1:pHTQTB8CQO2cYGQlYJX7fs9kxSq5ibUZMDoTSFLQLXg="
+      ];
+    };
     #entrypoint script for below docker container
     packages.entrypoint = pkgs.writeShellScriptBin "entrypoint" ''
       ${pkgs.nodejs}/bin/node ${packages.default}/lib/node_modules/pda/main.js
