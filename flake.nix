@@ -21,6 +21,7 @@
   let
     pkgs = inputs.nixpkgs.legacyPackages.${system};
   in rec {
+    #This builds our server
     packages.default = dream2nix.lib.evalModules {
       packageSets.nixpkgs = inputs.dream2nix.inputs.nixpkgs.legacyPackages.${system};
       modules = [
@@ -33,17 +34,23 @@
       ];
     };
 
+    #entrypoint script for below docker container
     packages.entrypoint = pkgs.writeShellScriptBin "entrypoint" ''
       ${pkgs.nodejs}/bin/node ${packages.default}/lib/node_modules/pda/main.js
     '';
 
+    #docker container
     packages.oci = pkgs.dockerTools.buildImage {
       name = "PDA";
       config = {
         cmd = [ "${packages.entrypoint}/bin/entrypoint" ];
+        Labels = {
+          "org.opencontainers.image.source"="https://github.com/drnfc/Employment-Portal-Project";
+        };
       };
     };
 
+    #development Environment
     devShells = {
       default = pkgs.mkShell {
         buildInputs = [
