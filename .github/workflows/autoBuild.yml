@@ -33,4 +33,4 @@ jobs:
     - run: nix build .#oci
     - run: |
         docker load < result
-        docker push ghcr.io/drnfc/store:latest
+        docker push ghcr.io/drnfc/Employment-Portal-Project:latest
