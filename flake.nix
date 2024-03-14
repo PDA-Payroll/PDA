@@ -42,7 +42,7 @@
     #docker container
     packages.oci = pkgs.dockerTools.buildImage {
       name = "PDA";
-      tag = "latest";
+      tag = "ghcr.io/drnfc/pda:latest";
       config = {
         cmd = [ "${packages.entrypoint}/bin/entrypoint" ];
         Labels = {
