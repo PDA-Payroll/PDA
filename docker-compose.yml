@@ -1,14 +1,10 @@
 version: '3.9'
 
 services:
-  web:
-    image: nginx
-    volumes:
-     - ./templates:/etc/nginx/templates
-    ports:
-     - "8080:80"
-    environment:
-     - nginx_port=80
+  pda:
+    image: ghcr.io/drnfc/pda:latest 
+    ports: 
+      - "6969:6969"
   db:
     image: postgres
     restart: always
