@@ -1,24 +1,12 @@
 {
   "name": "pda",
   "version": "0.0.1",
-  "description": "Public Demands Answers",
+  "description": "A lovely Payroll Portal",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/drnfc/Employment-Portal-Project.git"
-  },
-  "keywords": [
-    "payroll"
-  ],
-  "author": "drnfc, cklindt, antho-n-y",
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "bugs": {
-    "url": "https://github.com/drnfc/Employment-Portal-Project/issues"
-  },
-  "homepage": "https://github.com/drnfc/Employment-Portal-Project#readme",
+  "repository": "https://github.com/drnfc/PDA",
+  "author": "drnfc, rane20, cklindt, antho-n-y",
+  "license": "GPL-3.0-or-later",
+  "private": false,
   "dependencies": {
     "postgres": "^3.4.3"
   }
