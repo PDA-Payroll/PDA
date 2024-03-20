@@ -28,37 +28,34 @@
       };
       
       packages = rec {
-##### Building PDA #####
-        #build dependencies
-        packages = rec {
-          entrypoint = pkgs.writeShellScriptBin "startPda" ''
-            ${pkgs.nodejs}/bin/node .
-          '';
+        ##### Building PDA #####
+        # Entrypoint is the command to start the server
+        entrypoint = pkgs.writeShellScriptBin "startPda" ''
+          ${pkgs.nodejs}/bin/node .
+        '';
 
-          node-modules = pkgs.mkYarnPackage {
-            name = "node-modules";
-            src = ./.;
-          };
-          default = pkgs.stdenv.mkDerivation {
-            name = "pda";
-            src = ./.;
-            buildInputs = [
-              # JS stuff
-              pkgs.yarn
-              node-modules
-              entrypoint
-            ];
-            installPhase = ''
-              mkdir -p $out/bin
-              cp -r src $out/lib
-              cp ${entrypoint}/bin/startPda $out/bin/pda
-            '';
-          };
+        # build dependencies
+        node-modules = pkgs.mkYarnPackage {
+          name = "node-modules";
+          src = ./.;
         };
-        
-        
-        # Actual build
-        
+
+        # The actual build
+        default = pkgs.stdenv.mkDerivation {
+          name = "pda";
+          src = ./.;
+          buildInputs = [
+            # JS stuff
+            pkgs.yarn
+            node-modules
+            entrypoint
+          ];
+          installPhase = ''
+            mkdir -p $out/bin
+            cp -r src $out/lib
+            cp ${entrypoint}/bin/startPda $out/bin/pda
+          '';
+        };
         ##### Docker Stuff #####
 
         #docker container
