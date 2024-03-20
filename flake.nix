@@ -73,7 +73,6 @@
             nodejs
             postgresql_16
             yarn
-            packages.pgInit
           ];
           shellHook = ''
           '';
