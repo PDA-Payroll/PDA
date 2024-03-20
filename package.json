@@ -2,7 +2,9 @@
   "name": "pda",
   "version": "0.0.1",
   "description": "Your Lovely Employee Portal",
-  "source": "src/index.html",
+  "main": "src/server/index.js",
+  "source": "src/app/index.html",
+  "type": "module",
   "repository": "git@github.com:drnfc/PDA.git",
   "author": "drnfc <djbatfrog@gmail.com>",
   "license": "GPL-3.0-or-later",
@@ -12,7 +14,8 @@
     "build": "parcel build"
   },
   "dependencies": {
-    "postgres": "^3.4.3"
+    "express": "^4.18.3",
+    "pg": "^8.11.3"
   },
   "devDependencies": {
     "buffer": "^5.5.0||^6.0.0",

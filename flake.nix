@@ -31,6 +31,10 @@
 ##### Building PDA #####
         #build dependencies
         packages = rec {
+          entrypoint = pkgs.writeShellScriptBin "startPda" ''
+            ${pkgs.nodejs}/bin/node .
+          '';
+
           node-modules = pkgs.mkYarnPackage {
             name = "node-modules";
             src = ./.;
@@ -42,26 +46,20 @@
               # JS stuff
               pkgs.yarn
               node-modules
+              entrypoint
             ];
-            buildPhase = ''
-              export HOME=$(pwd)
-              ln -s ${node-modules}/libexec/pda/node_modules node_modules
-              ${pkgs.yarn}/bin/yarn --offline build 
-            '';
             installPhase = ''
-              mkdir $out
-              mv dist $out/lib
+              mkdir -p $out/bin
+              cp -r src $out/lib
+              cp ${entrypoint}/bin/startPda $out/bin/pda
             '';
           };
         };
-
+        
+        
         # Actual build
         
         ##### Docker Stuff #####
-        #entrypoint script for below docker container
-        entrypoint = pkgs.writeShellScriptBin "entrypoint" ''
-          ${pkgs.nodejs}/bin/node ${packages.default}/lib/node_modules/pda/main.js
-        '';
 
         #docker container
         oci = pkgs.dockerTools.buildImage {
@@ -79,20 +77,12 @@
       #development Environment
       devShells = {
         default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.node2nix
-            pkgs.nodejs
-            pkgs.yarn
-            # You can set the major version of Node.js to a specific one instead
-            # of the default version
-            # pkgs.nodejs-19_x
-
-            # You can choose pnpm, yarn, or none (npm).
-            pkgs.nodePackages.pnpm
-            # pkgs.yarn
-
-            pkgs.nodePackages.typescript
-            pkgs.nodePackages.typescript-language-server
+          buildInputs = with pkgs; [
+            node2nix
+            nodePackages.typescript
+            nodePackages.typescript-language-server
+            nodejs
+            yarn
           ];
           shellHook = ''
               zsh

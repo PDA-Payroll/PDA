@@ -1,6 +1,8 @@
-4873
+4874
 76/home/zack/school/objectOrientedDesignAndProgramming/groupProject/.gitignore1710367221651265625 0
-83/home/zack/school/objectOrientedDesignAndProgramming/groupProject/webpack.config.js1710899011226580766 0
+85/home/zack/school/objectOrientedDesignAndProgramming/groupProject/frontEnd/index.html1710905885014234644 0
+73/home/zack/school/objectOrientedDesignAndProgramming/groupProject/main.js1710907848523755061 0
+83/home/zack/school/objectOrientedDesignAndProgramming/groupProject/webpack.config.js1710903807354685450 0
 108/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/GOVERNANCE.md1710901723482000000 0
 121/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/lib/_stream_passthrough.js1710901723482000000 0
 130/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/lib/internal/streams/buffer_list.js1710901723482000000 0
@@ -13,9 +15,8 @@
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/readable.js1710901723482000000 0
 107/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/package.json1710901723482000000 0
 99/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/htmlnano/index.d.cts1710899600829999000 0
-80/home/zack/school/objectOrientedDesignAndProgramming/groupProject/src/index.html1710358162510528326 0
 128/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/htmlnano/lib/modules/normalizeAttributeValues.mjs1710899600829999000 0
-83/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist/index.js.map1710901736420317191 0
+81/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist/index.html1710908099546055495 0
 118/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/htmlnano/lib/modules/removeComments.cjs1710899600829999000 0
 116/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/htmlnano/lib/modules/mergeScripts.mjs1710899600829999000 0
 130/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/htmlnano/lib/modules/deduplicateAttributeValues.mjs1710899600829999000 0
@@ -283,7 +284,6 @@
 112/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/src/childState.js1710899600457000000 0
 98/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/src1710899633948239775 1
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/lib/process1710899635731989641 1
-84/home/zack/school/objectOrientedDesignAndProgramming/groupProject/docker-compose.yml1710800557362566691 0
 110/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/lib/cpuCount.js1710899600457000000 0
 109/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/lib/backend.js1710899600457000000 0
 114/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/lib/web/WebChild.js1710899600457000000 0
@@ -404,6 +404,7 @@
 98/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/workers/lib1710899633948239775 1
 147/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/core/test/fixtures/targets-default-distdir-none/package.json1710899598523000000 0
 170/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/core/test/fixtures/plugins/node_modules/parcel-transformer-bad-engines/package.json1710899598523000000 0
+74/home/zack/school/objectOrientedDesignAndProgramming/groupProject/frontEnd1710907695089997576 1
 166/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/core/test/fixtures/plugins/node_modules/parcel-transformer-bad-engines/index.js1710899598523000000 0
 157/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/core/test/fixtures/plugins/node_modules/parcel-transformer-bad-engines1710899636349903460 1
 119/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/readable-stream/lib/_stream_transform.js1710901723482000000 0
@@ -478,7 +479,6 @@
 119/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/dependency-location.js1710899598930000000 0
 117/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/isDirectoryInside.js1710899598930000000 0
 104/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/glob.js1710899598930000000 0
-69/home/zack/school/objectOrientedDesignAndProgramming/groupProject/src1710899389682035109 1
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/config.js1710899598930000000 0
 118/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/relativeBundlePath.js1710899598930000000 0
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/utils/src/stream.js1710899598930000000 0
@@ -523,7 +523,6 @@
 104/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/types/build-ts.js1710899600585999000 0
 105/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/types/package.json1710899600585999000 0
 101/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/types/index.js1710899600585999000 0
-79/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist/index.js1710901736416317188 0
 113/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/graph/lib/AdjacencyList.js1710899600842000000 0
 116/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/transformer-svg/src/inline.js1710899600191999000 0
 122/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/transformer-svg/src/dependencies.js1710899600191999000 0
@@ -853,7 +852,7 @@
 111/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/ordered-binary/.idea/modules.xml1710899617348000000 0
 147/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/ordered-binary/.nyc_output/5b6bd808-0399-4ee6-9395-344688761dfa.json1710899617348000000 0
 107/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/es/stringify.js1710899616529000000 0
-70/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist1710901736420317191 1
+70/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist1710908099537055472 1
 109/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/es/stringify.d.ts1710899616529000000 0
 109/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/es/types.d.ts.map1710899616529000000 0
 112/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/cosmiconfig/dist/loaders.d.ts.map1710899615719000000 0
@@ -873,7 +872,7 @@
 115/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/commonjs/index.d.ts.map1710899616529000000 0
 108/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/transformer-babel/src1710899633816258400 1
 119/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/commonjs/stringify.d.ts.map1710899616529000000 0
-76/home/zack/school/objectOrientedDesignAndProgramming/groupProject/flake.lock1710898451948215959 0
+76/home/zack/school/objectOrientedDesignAndProgramming/groupProject/flake.lock1710903807351685431 0
 100/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/commonjs1710899635470026272 1
 104/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/transformer-image1710899631447594024 1
 91/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib1710899630100786414 1
@@ -882,7 +881,6 @@
 104/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/lines-and-columns/LICENSE1710899617706000000 0
 111/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/lines-and-columns/build/index.js1710899617706000000 0
 102/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/lines-and-columns/build1710899634703133699 1
-78/home/zack/school/objectOrientedDesignAndProgramming/groupProject/src/index.js1710366953492266147 0
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/lines-and-columns/README.md1710899617706000000 0
 117/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/transformer-babel/src/utils.js1710899599739000000 0
 97/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/dotenv/lib/main.js1710899600532999000 0
@@ -2610,6 +2608,7 @@
 105/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/nth-check/lib/index.js.map1710899616665999000 0
 126/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-select/lib/pseudo-selectors/subselects.d.ts1710899615121000000 0
 109/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-select/lib/attributes.d.ts1710899615121000000 0
+73/home/zack/school/objectOrientedDesignAndProgramming/groupProject/backEnd1710908017364880514 1
 102/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/posthtml-parser/license1710899601301000000 0
 96/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/parcel/src/cli.js1710899618638000000 0
 119/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/csso/lib/restructure/3-disjoinRuleset.js1710899615257999000 0
@@ -2789,9 +2788,9 @@
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/call-bind/test/callBound.js1710901728984999000 0
 117/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/lazyload.js1710898794624000000 0
 106/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/js-yaml/dist/js-yaml.min.js1710899616782000000 0
-78/home/zack/school/objectOrientedDesignAndProgramming/groupProject/package.json1710901735360316454 0
+78/home/zack/school/objectOrientedDesignAndProgramming/groupProject/package.json1710908042613927311 0
 99/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@swc/helpers/LICENSE1710899601479000000 0
-75/home/zack/school/objectOrientedDesignAndProgramming/groupProject/yarn.lock1710901735350316447 0
+75/home/zack/school/objectOrientedDesignAndProgramming/groupProject/yarn.lock1710903807369685547 0
 96/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/nth-check/LICENSE1710899616665999000 0
 116/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/source-map/lib/source-map-consumer.js1710898795683000000 0
 96/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/timsort/README.md1710899615596999000 0
@@ -3038,7 +3037,7 @@
 98/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/braces/package.json1710899616276000000 0
 118/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/css3-attr.js1710898794624000000 0
 117/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@swc/helpers/_/_construct/package.json1710899601479000000 0
-65/home/zack/school/objectOrientedDesignAndProgramming/groupProject1710901736409317183 1
+65/home/zack/school/objectOrientedDesignAndProgramming/groupProject1710908042616927317 1
 102/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-select/package.json1710899615121000000 0
 110/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/regions/ZA.js1710898794624000000 0
 123/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/serviceworkers.js1710898794624000000 0
@@ -3123,7 +3122,7 @@
 95/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/has-flag/license1710898795611000000 0
 110/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/plugin/lib/PluginAPI.js1710899600247999000 0
 112/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/sxg.js1710898794624000000 0
-72/home/zack/school/objectOrientedDesignAndProgramming/groupProject/result1710456436399123033 0
+72/home/zack/school/objectOrientedDesignAndProgramming/groupProject/result1710906239552732293 0
 116/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@swc/helpers/_/_to_array/package.json1710899601479000000 0
 92/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/nth-check/lib1710899634299190442 1
 103/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/css-what/lib/es/index.js1710899616529000000 0
@@ -3890,6 +3889,7 @@
 114/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/svgo/plugins/removeEditorsNSData.js1710899600828000000 0
 110/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/watcher-linux-x64-glibc1710899631561577791 1
 104/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/svgo/plugins/sortAttrs.js1710899600828000000 0
+95/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist/frontEnd.08474a82.js.map1710908099568055550 0
 101/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/config-default1710899630405742786 1
 112/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/@parcel/runtime-react-refresh/src1710899633689276320 1
 111/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/postcss-value-parser/lib/walk.js1710899602266999000 0
@@ -3919,7 +3919,7 @@
 112/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/ttf.js1710898794624000000 0
 107/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/svgo/plugins/_collections.js1710899600828000000 0
 111/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/svgo/plugins/convertTransform.js1710899600828000000 0
-75/home/zack/school/objectOrientedDesignAndProgramming/groupProject/flake.nix1710901527631881131 0
+75/home/zack/school/objectOrientedDesignAndProgramming/groupProject/flake.nix1710907609446324826 0
 111/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/svgo/plugins/_applyTransforms.js1710899600828000000 0
 110/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/regions/TN.js1710898794624000000 0
 98/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/picomatch/README.md1710899616345999000 0
@@ -4774,6 +4774,7 @@
 98/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/hasown/CHANGELOG.md1710901729226000000 0
 128/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/css-media-scripting.js1710898794624000000 0
 114/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/http2.js1710898794624000000 0
+91/home/zack/school/objectOrientedDesignAndProgramming/groupProject/dist/frontEnd.08474a82.js1710908099562055535 0
 123/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/css-page-break.js1710898794624000000 0
 115/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/lmdb/dependencies/lz4/lib/lz4frame.c1710899616079999000 0
 113/home/zack/school/objectOrientedDesignAndProgramming/groupProject/node_modules/caniuse-lite/data/features/json.js1710898794624000000 0
