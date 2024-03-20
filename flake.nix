@@ -82,6 +82,7 @@
             nodePackages.typescript
             nodePackages.typescript-language-server
             nodejs
+            postgresql_16
             yarn
           ];
           shellHook = ''
