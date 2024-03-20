@@ -66,7 +66,7 @@
           name = "ghcr.io/drnfc/PDA";
           tag = "latest";
           config = {
-            cmd = [ "${packages.entrypoint}/bin/entrypoint" ];
+            cmd = [ "${packages.default}/bin/pda" ];
             Labels = {
               "org.opencontainers.image.source"="https://github.com/drnfc/Employment-Portal-Project";
             };
