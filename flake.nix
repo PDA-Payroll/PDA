@@ -37,6 +37,7 @@
           src = ./.;
           buildInputs = [
             # JS stuff
+            pkgs.postgresql_16
             pkgs.yarn
             node-modules
             entrypoint
@@ -47,10 +48,10 @@
             cp ${entrypoint}/bin/startPda $out/bin/pda
           '';
         };
-        ##### Docker Stuff #####
 
+        ##### Docker Stuff #####
         #docker container
-        oci = pkgs.dockerTools.buildImage {
+        oci = pkgs.dockerTools.buildLayeredImage {
           name = "ghcr.io/drnfc/PDA";
           tag = "latest";
           config = {
@@ -72,10 +73,9 @@
             nodejs
             postgresql_16
             yarn
+            packages.pgInit
           ];
           shellHook = ''
-              zsh
-              exit
           '';
         };
       };
