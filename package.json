@@ -1,0 +1,25 @@
+{
+  "name": "pda",
+  "version": "0.0.1",
+  "description": "Your Lovely Employee Portal",
+  "source": "src/index.html",
+  "repository": "git@github.com:drnfc/PDA.git",
+  "author": "drnfc <djbatfrog@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "buffer": "^5.5.0||^6.0.0",
+    "events": "^3.1.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "stream-http": "^3.1.0",
+    "url": "^0.11.0"
+  }
+}
