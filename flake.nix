@@ -18,15 +18,6 @@
       pkgs = inputs.nixpkgs.legacyPackages.${system};
     in rec {
       # This is a cache so we don't always have to rebuild
-      nix.settings = {
-        substituters = [
-          "https://pdapayroll.cachix.org"
-        ];
-        trusted-public-keys = [
-          "pdapayroll.cachix.org-1:pHTQTB8CQO2cYGQlYJX7fs9kxSq5ibUZMDoTSFLQLXg="
-        ];
-      };
-      
       packages = rec {
         ##### Building PDA #####
         # Entrypoint is the command to start the server
