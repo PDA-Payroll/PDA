@@ -54,10 +54,28 @@
         oci = pkgs.dockerTools.buildLayeredImage {
           name = "ghcr.io/drnfc/PDA";
           tag = "latest";
+          contents = [
+            packages.default
+            pkgs.coreutils
+            #I don't know if I need all these but I cba to look into it.
+            pkgs.dockerTools.usrBinEnv
+            pkgs.dockerTools.binSh
+            pkgs.dockerTools.caCertificates
+            pkgs.dockerTools.fakeNss
+          ];
+          extraCommands = ''
+            mkdir -m 1777 tmp
+          '';
           config = {
-            cmd = [ "${packages.default}/bin/pda" ];
+            Cmd = [ "${packages.default}/bin/pda" ];
+            ExposedPorts = {
+              "6969/tcp" = {};
+            };
             Labels = {
-              "org.opencontainers.image.source"="https://github.com/drnfc/Employment-Portal-Project";
+              "org.opencontainers.image.source"="https://github.com/drnfc/";
+            };
+            Volumes = {
+              "/" = {};
             };
           };
         };
@@ -75,6 +93,8 @@
             yarn
           ];
           shellHook = ''
+            zsh
+            exit
           '';
         };
       };

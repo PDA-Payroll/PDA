@@ -1,6 +1,19 @@
 version: '3.9'
 
 services:
+  pda: 
+    image: ghcr.io/drnfc/pda:latest
+    restart: always
+    environment:
+      POSTGRES_USER: pdaAdmin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pdaDB
+    ports:
+      - 6969:6969
+    networks:
+      default:
+        external:
+          name: localhost
   db:
     image: postgres
     restart: always
