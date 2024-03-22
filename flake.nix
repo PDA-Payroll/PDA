@@ -55,8 +55,11 @@
           name = "ghcr.io/drnfc/PDA";
           tag = "latest";
           contents = [
+            entrypoint
+            node-modules
             packages.default
             pkgs.coreutils
+            pkgs.bash
             #I don't know if I need all these but I cba to look into it.
             pkgs.dockerTools.usrBinEnv
             pkgs.dockerTools.binSh
