@@ -33,4 +33,4 @@ jobs:
     - run: nix build .#oci
     - run: |
         docker load < result
-        docker push ghcr.io/PDA-Payroll/pda:latest
+        docker push ghcr.io/pda-payroll/pda:latest

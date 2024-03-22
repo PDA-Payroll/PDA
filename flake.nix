@@ -75,7 +75,7 @@
               "6969/tcp" = {};
             };
             Labels = {
-              "org.opencontainers.image.source"="https://github.com/PDA-Payroll/";
+              "org.opencontainers.image.source"="https://github.com/pda-payroll/";
             };
             Volumes = {
               "/" = {};
