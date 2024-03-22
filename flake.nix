@@ -52,7 +52,7 @@
         ##### Docker Stuff #####
         #docker container
         oci = pkgs.dockerTools.buildLayeredImage {
-          name = "ghcr.io/drnfc/PDA";
+          name = "ghcr.io/PDA-Payroll/PDA";
           tag = "latest";
           contents = [
             entrypoint
@@ -75,7 +75,7 @@
               "6969/tcp" = {};
             };
             Labels = {
-              "org.opencontainers.image.source"="https://github.com/drnfc/";
+              "org.opencontainers.image.source"="https://github.com/PDA-Payroll/";
             };
             Volumes = {
               "/" = {};
