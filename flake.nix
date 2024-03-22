@@ -52,7 +52,7 @@
         ##### Docker Stuff #####
         #docker container
         oci = pkgs.dockerTools.buildLayeredImage {
-          name = "ghcr.io/PDA-Payroll/PDA";
+          name = "ghcr.io/pda-payroll/pda";
           tag = "latest";
           contents = [
             entrypoint
