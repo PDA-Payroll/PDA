@@ -12,6 +12,7 @@ const DB_USER = process.env.DB_USER || 'pdaAdmin';
 const DB_HOST = process.env.DB_HOST || 'localhost';
 
 // SETUP //
+// This basically just checks if there is a database created.  If there is not create one, else, note there is one in the log.  This should be quite apparent from the code
 async function setupDatabase() {
     const client = new pg.Client({
         port: DB_PORT,
@@ -41,6 +42,7 @@ async function setupDatabase() {
 }
 
 ////// WEBSERVER //////
+//#This is basically just hosting this to whatever port is chosen in PORT
 const app = express()
 app.get('*', function (req, res) {
     const filePath = path.join(
