@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   pda: 
-    image: ghcr.io/drnfc/pda:latest
+    image: ghcr.io/pda-payroll/pda:latest
     restart: always
     environment:
       POSTGRES_USER: pdaAdmin
