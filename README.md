@@ -12,8 +12,11 @@ There are two supported options, Nix and docker/podman/kubernetes
 nix run github:pda-payroll/pda
 `
 ## Docker/Podman
-We provide an OCI compliant container at `ghcr.io/pda-payroll/pda:latest`
-Unfortunately as this project is under active development we only provide a latest image, however nix makes it very easy for you to build it yoursel.  Just pull the repo, check out your desired commit and run this command if you are using docker:
+We provide an OCI compliant container at `ghcr.io/pda-payroll/pda:latest`.
+
+Unfortunately as this project is under active development we only provide a latest image, however nix makes it very easy for you to build this project yourself.  
+
+Just pull the repo, check out your desired commit and run this command if you are using docker:
 `nix build .#oci && docker load < result`
 
 or this command if you are using podman:
