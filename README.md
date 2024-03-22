@@ -17,8 +17,51 @@ We provide an OCI compliant container at `ghcr.io/pda-payroll/pda:latest`.
 Unfortunately as this project is under active development we only provide a latest image, however nix makes it very easy for you to build this project yourself.  
 
 Just pull the repo, check out your desired commit and run this command if you are using docker:
+
 `nix build .#oci && docker load < result`
 
 or this command if you are using podman:
+
 `nix build .#oci && docker load < result`
-A docker compose example is provided in the root of the repo
+
+## Docker Compose
+
+`
+version: '3.9'
+
+services:
+  pda: 
+    image: ghcr.io/pda-payroll/pda:latest
+    restart: always
+    environment:
+      POSTGRES_USER: pdaAdmin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pdaDB
+    ports:
+      - 80:6969
+    networks:
+      default:
+        external:
+          name: localhost
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_USER: pdaAdmin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pdaDB
+    ports:
+      - 7734:5432
+    networks:
+      default:
+        external:
+          name: localhost
+`
