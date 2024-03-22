@@ -1,6 +1,42 @@
 # PDA
 The open source Payroll Data Assistant.
 
+# Building
+## Why are we using nix
+Nix is an incredible build system that enables a large number of benefits:
+- You technically don't even have to have this repository cloned to build or run PDA.
+- Individual parts of the build process are cached on a cachix repo, speeding up builds.
+- The output is guarenteed to be exactly the same no matter where/what you build on (excluding different architecture if you are not cross compiling) even down to having the same hash.
+- and many other numerous benefits
+## Requirements to build
+- Nix (setup instructions found here: https://nixos.wiki/wiki/Flakes)
+- Linux, although it is likely this will work on Mac and WSL, though this has not been tested, as using anything other than Linux for a server is extremely unusual. It will probably be able to be build on WSL or Mac, but whether or not you can actually host has not been tested.
+## What is being built
+The build is declared in the flake.nix with 3 relevent outputs:
+1. PDA itself
+2. A PDA OCI compliant container
+## Build Instructions
+### Building PDA
+Run the command:
+```
+nix build github:pda-payroll/pda
+```
+If you are inside this git repo you can alternitively run:
+```
+nix build
+```
+The output will be found in the result symlink wherever you ran the previous command
+### Building OCI-compliant container (Docker Container)
+Run the command:
+```
+nix build github:pda-payroll/pda#oci
+```
+If you are inside this git repo you can alternitively run:
+```
+nix build .#oci
+```
+The output will be found in the result symlink wherever you ran the previous command
+
 # Usage
 There are two supported options, Nix and docker/podman/kubernetes
 ## Nix
