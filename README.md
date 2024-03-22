@@ -26,7 +26,7 @@ or this command if you are using podman:
 
 ## Docker Compose
 
-`
+```
 version: '3.9'
 
 services:
@@ -64,4 +64,4 @@ services:
       default:
         external:
           name: localhost
-`
+```
