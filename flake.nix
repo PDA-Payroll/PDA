@@ -19,43 +19,43 @@
     in rec {
       # This is a cache so we don't always have to rebuild
       packages = rec {
-        ##### Building PDA #####
-        # Entrypoint is the command to start the server
-        entrypoint = pkgs.writeShellScriptBin "startPda" ''
-          ${pkgs.nodejs}/bin/node .
-        '';
-
         # build dependencies
         node-modules = pkgs.mkYarnPackage {
           name = "node-modules";
           src = ./.;
+          doDist = false;
+          buildPhase = ''
+            export HOME=$(mktemp -d)
+            yarn --offline build
+          '';
         };
+        #entryPoint
+        entryPoint = pkgs.writeShellScriptBin "startPda" ''
+          export NODE_PATH=${node-modules}/libexec/pda/node_modules
 
+          exec ${pkgs.nodejs}/bin/node ${node-modules}/libexec/pda/deps/pda/src/server/index.js
+        '';
         # The actual build
         default = pkgs.stdenv.mkDerivation {
           name = "pda";
           src = ./.;
           buildInputs = [
-            # JS stuff
-            pkgs.postgresql_16
-            pkgs.yarn
             node-modules
-            entrypoint
+            entryPoint
           ];
           installPhase = ''
             mkdir -p $out/bin
             cp -r src $out/lib
-            cp ${entrypoint}/bin/startPda $out/bin/pda
+            cp ${entryPoint}/bin/startPda $out/bin/pda
           '';
         };
-
         ##### Docker Stuff #####
         #docker container
         oci = pkgs.dockerTools.buildLayeredImage {
           name = "ghcr.io/pda-payroll/pda";
           tag = "latest";
           contents = [
-            entrypoint
+            default
             node-modules
             packages.default
             pkgs.coreutils
@@ -76,9 +76,6 @@
             };
             Labels = {
               "org.opencontainers.image.source"="https://github.com/pda-payroll/";
-            };
-            Volumes = {
-              "/" = {};
             };
           };
         };
