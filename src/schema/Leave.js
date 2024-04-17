@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../server/index.js";
+import { sequelize } from "../server/databaseConnection.js";
 
 module.exports = sequelize.define("Leave", {
   requestStatus: {
