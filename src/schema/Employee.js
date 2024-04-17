@@ -2,7 +2,15 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../server/databaseConnection.js";
 
 export const Employee = sequelize.define("Employee", {
-  employeeName: {
+  employeeFirstName: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  EmployeeMiddleName: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  employeeLastName: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
