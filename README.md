@@ -15,6 +15,7 @@ Nix is an incredible build system that enables a large number of benefits:
 The build is declared in the flake.nix with 3 relevent outputs:
 1. PDA itself
 2. A PDA OCI compliant container
+3. A development environment
 ## Build Instructions
 ### Building PDA
 Run the command:
@@ -31,7 +32,7 @@ Run the command:
 ```
 nix build github:pda-payroll/pda#oci
 ```
-If you are inside this git repo you can alternitively run:
+If you have cloned this git repo you can alternitively run:
 ```
 nix build .#oci
 ```
