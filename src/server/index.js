@@ -1,18 +1,24 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { PORT } from "./constants.js";
 import { sequelize } from "./databaseConnection.js";
 
+import { PORT } from "./constants.js";
 const app = express();
-app.get("*", function (req, res) {
-  const filePath = path.join(
-    path.dirname(fileURLToPath(import.meta.url)),
-    "..",
-    "app",
-    "index.html",
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept",
   );
-  res.sendFile(filePath);
+  next();
+});
+
+app.get("/api/ping", (req, res) => {
+  res.send({
+    mesg: "Hellow, World",
+  });
 });
 
 app.listen(PORT, () => {
