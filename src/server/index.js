@@ -2,23 +2,22 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { sequelize } from "./databaseConnection.js";
+import cors from "cors";
 
 import { PORT } from "./constants.js";
 const app = express();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept",
-  );
-  next();
-});
+const error418 = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "errorResponse",
+  "418.html",
+);
 
-app.get("/api/ping", (req, res) => {
-  res.send({
-    mesg: "Hellow, World",
-  });
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.sendFile(error418);
 });
 
 app.listen(PORT, () => {
