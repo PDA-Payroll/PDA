@@ -2,8 +2,9 @@ import express from "express";
 import cors from "cors";
 
 import { PORT } from "../constants.js";
-
 import { sequelize } from "../db/dbIndex.js";
+import { sleep } from "../lib/misc.js";
+
 import * as db from "../db/dbIndex.js";
 import * as errorCodes from "./errorCodes.js";
 
@@ -22,6 +23,7 @@ testDb = async () => {
       "Failed to connect to Database, trying again in 5 seconds",
       error,
     );
+    await sleep(5000);
     testDb();
   }
 };
