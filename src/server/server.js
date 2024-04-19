@@ -1,23 +1,17 @@
 import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
 import { sequelize } from "./databaseConnection.js";
 import cors from "cors";
 
 import { PORT } from "./constants.js";
+import * as errorCodes from "./errorCodes.js";
 const app = express();
-
-const error418 = path.join(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "errorResponse",
-  "418.html",
-);
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.sendFile(error418);
+  res.sendFile(errorCodes.error418);
 });
 
 app.listen(PORT, () => {
