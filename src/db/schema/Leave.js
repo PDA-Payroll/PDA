@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../server/databaseConnection.js";
+import { sequelize } from "../../server/databaseConnection.js";
 
-module.exports = sequelize.define("Leave", {
+export const Leave = sequelize.define("Leave", {
   requestStatus: {
     type: DataTypes.TEXT,
     allowNull: false,

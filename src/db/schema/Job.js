@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../server/databaseConnection.js";
+import { sequelize } from "../../server/databaseConnection.js";
 
-module.exports = sequelize.define("Job", {
+export const Job = sequelize.define("Job", {
   title: {
     type: DataTypes.TEXT,
     allowNull: false,

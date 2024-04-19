@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../server/databaseConnection.js";
+import { sequelize } from "../../server/databaseConnection.js";
 
 export const Employee = sequelize.define("Employee", {
   employeeFirstName: {
@@ -32,7 +32,9 @@ export const Employee = sequelize.define("Employee", {
   },
 });
 
-sequelize.models.Employee.hasMany(Employee, {
-  foreignKey: "supervisorId",
-});
-sequelize.models.Employee.belongsTo(Employee);
+export const setSupvisorRelationship = () => {
+  sequelize.models.Employee.hasMany(Employee, {
+    foreignKey: "supervisorId",
+  });
+  sequelize.models.Employee.belongsTo(Employee);
+};

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../server/databaseConnection.js";
+import { sequelize } from "../../server/databaseConnection.js";
 
-module.exports = sequelize.define(
+export const PunchCard = sequelize.define(
   "PunchCard",
   {
     clockInTime: {
