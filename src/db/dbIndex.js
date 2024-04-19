@@ -13,6 +13,7 @@ setAssociations = () => {
   setSupvisorRelationship();
   Promotion();
 };
+
 module.exports = {
   BillingInfo,
   Employee,
