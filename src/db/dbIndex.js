@@ -1,9 +1,11 @@
+import { Sequelize } from "sequelize";
+
 import { sequelize } from "./sequelize.js";
-import { BillingInfo } from "./schema/BillingInfo.js";
-import { Employee } from "./schema/Employee.js";
-import { Job } from "./schema/Job.js";
-import { Leave } from "./schema/Leave.js";
-import { PunchCard } from "./schema/PunchCard.js";
+import { BillingInfo } from "./schema/BillingInfoSchema.js";
+import { Employee } from "./schema/EmployeeSchema.js";
+import { Job } from "./schema/JobSchema.js";
+import { Leave } from "./schema/LeaveSchema.js";
+import { PunchCard } from "./schema/PunchCardSchema.js";
 
 // setupAssociation Classes
 const BillingInfoAssociation = () => {
@@ -35,6 +37,7 @@ const setupAssociation = () => {
 
 export {
   sequelize,
+  Sequelize,
   BillingInfo,
   Employee,
   Job,
