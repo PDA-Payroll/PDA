@@ -1,5 +1,3 @@
-import { env } from "process";
-
 //webserver
 export const PORT = 6969;
 

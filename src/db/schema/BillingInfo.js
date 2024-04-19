@@ -1,12 +1,7 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../../server/databaseConnection.js";
+import { sequelize } from "../dbIndex.js";
 
 export const BillingInfo = sequelize.define("BillingInfo", {
-  id: {
-    type: DataTypes.UUID,
-    autoIncrement: true,
-    primaryKey: true,
-  },
   addressLine1: {
     type: DataTypes.TEXT,
     allowNull: false,
@@ -27,7 +22,7 @@ export const BillingInfo = sequelize.define("BillingInfo", {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  rountingNumber: {
+  routingNumber: {
     type: DataTypes.TEXT,
     allowNull: false,
   },

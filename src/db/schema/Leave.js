@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../../server/databaseConnection.js";
+import { sequelize } from "../dbIndex.js";
 
 export const Leave = sequelize.define("Leave", {
   requestStatus: {
