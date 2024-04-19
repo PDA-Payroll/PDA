@@ -33,7 +33,7 @@
         entryPoint = pkgs.writeShellScriptBin "startPda" ''
           export NODE_PATH=${node-modules}/libexec/pda/node_modules
 
-          exec ${pkgs.nodejs}/bin/node ${node-modules}/libexec/pda/deps/pda/src/server/index.js
+          exec ${pkgs.nodejs}/bin/node ${node-modules}/libexec/pda/deps/pda/src/server/server.js
         '';
         # The actual build
         default = pkgs.stdenv.mkDerivation {

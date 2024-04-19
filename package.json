@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Your Lovely Employee Portal",
   "main": "dist/main.js",
-  "source": "src/server/index.js",
+  "source": "src/server/server.js",
   "type": "module",
   "repository": "git@github.com:drnfc/PDA.git",
   "author": "drnfc <djbatfrog@gmail.com>",
