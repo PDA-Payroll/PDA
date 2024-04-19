@@ -7,18 +7,10 @@ import { LeaveRequest } from "./schema/LeaveRequest.js";
 import { Promotion } from "./schema/Promotion.js";
 import { PunchCard } from "./schema/PunchCard.js";
 
-setAssociations = () => {
+export const setAssociations = () => {
   BillingInfoAssociation();
   LeaveRequest();
   setSupvisorRelationship();
   Promotion();
 };
-
-module.exports = {
-  BillingInfo,
-  Employee,
-  Job,
-  Leave,
-  PunchCard,
-  setAssociations,
-};
+export { BillingInfo, Employee, Job, Leave, PunchCard };
