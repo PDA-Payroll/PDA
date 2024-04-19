@@ -13,6 +13,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+testDb = async () => {
+  try {
+    await db.sequelize.authenticate();
+    console.log("Successfully Connected to Database");
+  } catch (error) {
+    console.error(
+      "Failed to connect to Database, trying again in 5 seconds",
+      error,
+    );
+    testDb();
+  }
+};
+
 sequelize
   .sync({ force: false }) // Change to false when in prod
   .then(() => {
@@ -29,10 +42,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`server listening on port: ${PORT}`);
 });
-
-try {
-  await db.sequelize.authenticate();
-  console.log("Successfully Connected to Database");
-} catch (error) {
-  console.error("Failed to connect to Database", error);
-}
