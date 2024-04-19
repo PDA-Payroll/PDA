@@ -1,9 +1,10 @@
 import express from "express";
-import { sequelize } from "./databaseConnection.js";
 import cors from "cors";
 
+import { sequelize } from "./databaseConnection.js";
 import { PORT } from "./constants.js";
 import * as errorCodes from "./errorCodes.js";
+
 const app = express();
 
 app.use(cors());
