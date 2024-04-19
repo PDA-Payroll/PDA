@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 
-import { sequelize } from "./databaseConnection.js";
-import { PORT } from "./constants.js";
+import { PORT } from "../constants.js";
+
+import * as db from "../db/dbIndex.js";
 import * as errorCodes from "./errorCodes.js";
 
 const app = express();
@@ -20,7 +21,7 @@ app.listen(PORT, () => {
 });
 
 try {
-  await sequelize.authenticate();
+  await db.sequelize.authenticate();
   console.log("Successfully Connected to Database");
 } catch (error) {
   console.error("Failed to connect to Database", error);
