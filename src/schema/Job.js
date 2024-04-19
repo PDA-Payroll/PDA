@@ -14,4 +14,8 @@ module.exports = sequelize.define("Job", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  leaveAccrualRate: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
