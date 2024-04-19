@@ -17,11 +17,18 @@ module.exports = sequelize.define("BillingInfo", {
   },
   city: {
     type: DataTypes.TEXT,
+    allowNull: false,
   },
   postalCode: {
     type: DataTypes.INTEGER,
+    allowNull: false,
   },
   state: {
     type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  rountingNumber: {
+    type: DataTypes.TEXT,
+    allowNull: false,
   },
 });
