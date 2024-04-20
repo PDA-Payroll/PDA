@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize";
 
 import * as config from "../constants.js";
+import { sleep } from "./misc.js";
 
 //database connection
 export const sequelize = new Sequelize(
@@ -13,13 +14,15 @@ export const sequelize = new Sequelize(
     dialect: "postgres",
   },
 );
-export const syncDb = () => {
+export const initDbConnection = async () => {
   sequelize
     .sync({ force: false }) // Change to false when in prod
     .then(() => {
       console.log("Synced DB");
     })
-    .catch((err) => {
+    .catch(async (err) => {
       console.log("Failed to sync db: " + err.message);
+      await sleep(5000);
+      return initDbConnection();
     });
 };

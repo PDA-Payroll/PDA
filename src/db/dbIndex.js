@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-import { sequelize } from "./sequelize.js";
+import { sequelize } from "../lib/sequelizeUtils.js";
 import { BillingInfo } from "./schema/BillingInfoSchema.js";
 import { Employee } from "./schema/EmployeeSchema.js";
 import { Job } from "./schema/JobSchema.js";
