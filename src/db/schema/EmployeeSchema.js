@@ -6,7 +6,7 @@ export const Employee = sequelize.define("Employee", {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  EmployeeMiddleName: {
+  employeeMiddleName: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
