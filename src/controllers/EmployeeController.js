@@ -1,5 +1,9 @@
 import * as db from "../db/dbIndex";
-import { findObjectByPk } from "../lib/controllerLib";
+import {
+  deleteAll,
+  deleteObjectById,
+  findObjectByPk,
+} from "../lib/controllerLib";
 
 const Employee = db.Employee;
 const Op = db.Op;
@@ -41,3 +45,7 @@ export const findEmployeeByUsername = (req, res) => {
       });
     });
 };
+
+export const deleteEmployeeById = deleteObjectById(Employee);
+
+export const deleteAllEmployees = deleteAll(Employee);
