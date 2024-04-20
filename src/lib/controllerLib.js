@@ -3,6 +3,24 @@ import { varNameToString } from "./misc";
 
 const Op = db.Op;
 
+// findAll :: Object -> (req, res) -> void
+export const findAllOfObject = (Entity) => (field) => (req, res) => {
+  const field = req.query.field;
+  var condition = field ? { field: { [Op.like]: `%${field}%` } } : null;
+
+  Entity.findAll({ where: condition })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message ||
+          `Some error occurred while retrieving ${varNameToString(Entity)}`,
+      });
+    });
+};
+
 // findByPk :: Object -> (req, res) -> void
 export const findObjectByPk = (Entity) => (req, res) => {
   const id = req.params.id;
@@ -24,6 +42,7 @@ export const findObjectByPk = (Entity) => (req, res) => {
     });
 };
 
+// deleteObjectById :: Object -> (req, res) -> void
 export const deleteObjectById = (Entity) => (req, res) => {
   const id = req.params.id;
 
@@ -48,6 +67,7 @@ export const deleteObjectById = (Entity) => (req, res) => {
     });
 };
 
+// deleteAll :: Object -> (req, res) -> void
 export const deleteAll = (Entity) => (req, res) => {
   Entity.destroy({
     where: {},
