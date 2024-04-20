@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize, Op } from "sequelize";
 
 import { sequelize } from "../lib/sequelizeUtils.js";
 import { BillingInfo } from "./schema/BillingInfoSchema.js";
@@ -38,6 +38,7 @@ const setupAssociation = () => {
 export {
   sequelize,
   Sequelize,
+  Op,
   BillingInfo,
   Employee,
   Job,
