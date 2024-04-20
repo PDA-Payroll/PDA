@@ -1,5 +1,5 @@
-import * as db from "../db/dbIndex";
-import { varNameToString } from "./misc";
+import * as db from "../db/dbIndex.js";
+import { varNameToString } from "./misc.js";
 
 const Op = db.Op;
 

@@ -1,9 +1,9 @@
-import * as db from "../db/dbIndex";
+import * as db from "../db/dbIndex.js";
 import {
   deleteAll,
   deleteObjectById,
   findObjectByPk,
-} from "../lib/controllerLib";
+} from "../lib/controllerLib.js";
 
 const Employee = db.Employee;
 const Op = db.Op;
