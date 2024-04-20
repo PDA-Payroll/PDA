@@ -13,3 +13,13 @@ export const sequelize = new Sequelize(
     dialect: "postgres",
   },
 );
+export const syncDb = () => {
+  sequelize
+    .sync({ force: false }) // Change to false when in prod
+    .then(() => {
+      console.log("Synced DB");
+    })
+    .catch((err) => {
+      console.log("Failed to sync db: " + err.message);
+    });
+};
