@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as employee from "../controllers/EmployeeController.js";
 
-export const routing = (app) => {
+export const employeeRouting = (app) => {
   var router = Router();
 
   //create a new emplotee
