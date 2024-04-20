@@ -6,6 +6,7 @@ import { PORT } from "../constants.js";
 import * as db from "../db/dbIndex.js";
 import * as errorCodes from "./errorCodes.js";
 import { initDbConnection } from "../lib/sequelizeUtils.js";
+import { employeeRouting } from "../routing/employeeRouting.js";
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.sendFile(errorCodes.error418);
 });
+
+employeeRouting(app);
 
 app.listen(PORT, () => {
   console.log(`server listening on port: ${PORT}`);
