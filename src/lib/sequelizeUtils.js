@@ -16,7 +16,7 @@ export const sequelize = new Sequelize(
 );
 export const initDbConnection = async () => {
   sequelize
-    .sync({ force: false }) // Change to false when in prod
+    .sync({ force: true }) // Change to false when in prod
     .then(() => {
       console.log("Synced DB");
     })
