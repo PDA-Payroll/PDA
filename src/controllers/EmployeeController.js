@@ -3,6 +3,7 @@ import {
 	deleteAll,
 	deleteObjectById,
 	findObjectByPk,
+	updateByPk,
 } from "../lib/controllerLib.js";
 
 const Employee = db.Employee;
@@ -17,6 +18,7 @@ export const create = (req, res) => {
 		employeePassword: req.body.employeePassword,
 		isAdmin: req.body.isAdmin,
 		socialSecurityNumber: req.body.socialSecurityNumber,
+		supervisorId: req.body.supervisorId,
 	};
 	Employee.create(employee)
 		.then((data) => {
@@ -29,10 +31,12 @@ export const create = (req, res) => {
 		});
 };
 
+export const updateEmployeeByPk = updateByPk(Employee);
+
 export const findEmployeeByPk = findObjectByPk(Employee);
 
 export const findEmployeeByUsername = (req, res) => {
-	const username = req.query.employeeUserName;
+	const username = req.params.employeeUserName;
 	var condition = username ? { username: { [Op.like]: `%${title}%` } } : null;
 
 	Employee.findOne({ where: condition })
