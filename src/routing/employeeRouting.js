@@ -8,9 +8,9 @@ export const employeeRouting = (app) => {
 
 	router.post("/post/update/:id", employee.updateEmployeeByPk);
 
-	router.get("/get/:id", employee.findEmployeeByPk);
+	router.get("/get/id/:id", employee.findEmployeeByPk);
 
-	router.get("/get/:username", employee.findEmployeeByUsername);
+	router.get("/get/username/:username", employee.findEmployeeByUsername);
 
 	router.delete("/delete/all", employee.deleteAllEmployees);
 
