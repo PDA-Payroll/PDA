@@ -4,6 +4,8 @@ import * as employee from "../controllers/EmployeeController.js";
 export const employeeRouting = (app) => {
 	var router = Router();
 
+	app.use("/employee", router);
+
 	router.post("/post/create", employee.create);
 
 	router.post("/post/update/:id", employee.updateEmployeeByPk);
@@ -15,6 +17,4 @@ export const employeeRouting = (app) => {
 	router.delete("/delete/all", employee.deleteAllEmployees);
 
 	router.delete("/delete/:id", employee.deleteEmployeeById);
-
-	app.use("/employee", router);
 };
