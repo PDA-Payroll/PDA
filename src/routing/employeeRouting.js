@@ -2,17 +2,19 @@ import { Router } from "express";
 import * as employee from "../controllers/EmployeeController.js";
 
 export const employeeRouting = (app) => {
-  var router = Router();
+	var router = Router();
 
-  //create a new emplotee
-  router.post("/post", employee.create);
+	router.post("/post/create", employee.create);
 
-  // find employee by pk
-  router.get("/get/:id", employee.findEmployeeByPk);
+	router.post("/post/update/:id", employee.updateEmployeeByPk);
 
-  router.delete("/delete/all", employee.deleteAllEmployees);
+	router.get("/get/:id", employee.findEmployeeByPk);
 
-  router.delete("/delete/:id", employee.deleteEmployeeById);
+	router.get("/get/:username", employee.findEmployeeByUsername);
 
-  app.use("/employee", router);
+	router.delete("/delete/all", employee.deleteAllEmployees);
+
+	router.delete("/delete/:id", employee.deleteEmployeeById);
+
+	app.use("/employee", router);
 };
