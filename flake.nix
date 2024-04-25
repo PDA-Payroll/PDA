@@ -79,6 +79,12 @@
             };
           };
         };
+
+        #### miscelanious dev util ####
+        updateDependencies = pkgs.writeShellScriptBin "updateDependencies" ''
+          ${pkgs.yarn}/bin/yarn upgrade
+          ${pkgs.nix}/bin/nix flake update
+        '';
       };
 
       #development Environment
@@ -91,6 +97,7 @@
             nodejs
             postgresql_16
             yarn
+            packages.updateDependencies
           ];
           shellHook = ''
             zsh
