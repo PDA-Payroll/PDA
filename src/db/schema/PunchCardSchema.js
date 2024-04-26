@@ -1,19 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../dbIndex.js";
 
-export const PunchCard = sequelize.define(
-  "PunchCard",
-  {
-    clockInTime: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    clockOutTime: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-  },
-  {
-    timestamps: false,
-  },
-);
+export const PunchCard = sequelize.define("PunchCard", {
+	// This is in hours
+	date: DataTypes.DATE,
+	timeWorked: DataTypes.FLOAT,
+});
