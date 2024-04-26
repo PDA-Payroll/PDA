@@ -35,6 +35,14 @@ const associateEmployeeWithBillingInfo = () => {
 const associatePunchCardWithEmployee = () =>
 	associateManyWithEmployee(PunchCard);
 
+const AssociateEmployeeWithPunchCard = () => {
+	PunchCard.belongsTo(Employee, {
+		foreignKey: {
+			allowNull: false,
+		},
+	});
+};
+
 const LeaveRequest = () => {
 	Employee.belongsToMany(Leave, { through: "LeaveRequest" });
 	Leave.belongsToMany(Employee, { through: "LeaveRequest" });
@@ -52,6 +60,7 @@ const setupAssociation = () => {
 	associateEmployeeWithBillingInfo();
 
 	associatePunchCardWithEmployee();
+	AssociateEmployeeWithPunchCard();
 
 	LeaveRequest();
 	Promotion();
