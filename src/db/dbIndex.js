@@ -7,14 +7,33 @@ import { Job } from "./schema/JobSchema.js";
 import { Leave } from "./schema/LeaveSchema.js";
 import { PunchCard } from "./schema/PunchCardSchema.js";
 
-// setupAssociation Classes
-const BillingInfoAssociation = () => {
-	Employee.hasMany(BillingInfo, { as: "billingInfo" });
-	BillingInfo.belongsTo(Employee, {
-		foreignKey: "employeeId",
-		as: "employee",
+// associ
+
+const setSupvisorRelationship = () => {
+	Employee.hasMany(Employee, { foreignKey: "supervisorId" });
+	Employee.belongsTo(Employee);
+};
+// associateManyWithEmployee :: model -> modelAssociatedWithEmployee
+const associateManyWithEmployee = (model) => {
+	Employee.hasMany(model, {
+		onDelete: "cascade",
 	});
 };
+
+// associateBillingInfo :: BillingInfo -> BillingInfoAssociatedWithEmployee
+const associateBillingInfoWithEmployee = () =>
+	associateManyWithEmployee(BillingInfo);
+
+const associateEmployeeWithBillingInfo = () => {
+	BillingInfo.belongsTo(Employee, {
+		foreignKey: {
+			allowNull: false,
+		},
+	});
+};
+// associatePunchCardWithEmployee :: PunchCard -> PunchCardAssociatedWithEmployee
+const associatePunchCardWithEmployee = () =>
+	associateManyWithEmployee(PunchCard);
 
 const LeaveRequest = () => {
 	Employee.belongsToMany(Leave, { through: "LeaveRequest" });
@@ -26,16 +45,13 @@ const Promotion = () => {
 	Job.belongsToMany(Employee, { through: "Promotion" });
 };
 
-const setSupvisorRelationship = () => {
-	Employee.hasMany(Employee, { foreignKey: "supervisorId" });
-	Employee.belongsTo(Employee);
-};
-
 const setupAssociation = () => {
-	BillingInfoAssociation();
+	setSupvisorRelationship();
+	associateBillingInfoWithEmployee();
+	associateEmployeeWithBillingInfo();
+	associatePunchCardWithEmployee();
 	LeaveRequest();
 	Promotion();
-	setSupvisorRelationship();
 };
 
 export {

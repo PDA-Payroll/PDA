@@ -37,7 +37,9 @@ export const findEmployeeByPk = findObjectByPk(Employee);
 
 export const findEmployeeByUsername = (req, res) => {
 	const username = req.params.employeeUserName;
-	var condition = username ? { username: { [Op.like]: `%${title}%` } } : null;
+	var condition = username
+		? { username: { [Op.like]: `%${username}%` } }
+		: null;
 
 	Employee.findOne({ where: condition })
 		.then((data) => {
