@@ -11,7 +11,7 @@ import { PunchCard } from "./schema/PunchCardSchema.js";
 
 const setSupvisorRelationship = () => {
 	Employee.hasMany(Employee, { foreignKey: "supervisorId" });
-	Employee.belongsTo(Employee);
+	Employee.belongsTo(Employee, { foreignKey: "supervisorId" });
 };
 // associateManyWithEmployee :: model -> modelAssociatedWithEmployee
 const associateManyWithEmployee = (model) => {

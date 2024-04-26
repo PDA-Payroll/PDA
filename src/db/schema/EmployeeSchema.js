@@ -30,8 +30,4 @@ export const Employee = sequelize.define("Employee", {
 		type: DataTypes.INTEGER,
 		allowNull: false,
 	},
-	supervisorId: {
-		type: DataTypes.INTEGER,
-		allowNull: true,
-	},
 });
