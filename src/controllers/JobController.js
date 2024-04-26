@@ -1,10 +1,10 @@
-import { Job } from "../db/dbIndex";
+import { Job } from "../db/dbIndex.js";
 import {
 	deleteObjectById,
 	findAllOfObject,
 	findObjectByPk,
 	updateByPk,
-} from "../lib/controllerLib";
+} from "../lib/controllerLib.js";
 
 export const create = (req, res) => {
 	const job = {

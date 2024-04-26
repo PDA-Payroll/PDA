@@ -1,6 +1,5 @@
 import { Router } from "express";
 import * as employee from "../controllers/EmployeeController.js";
-import * as employeeJob from "../controllers/EmployeeJobController.js";
 
 export const employeeRouting = (app) => {
 	var router = Router();

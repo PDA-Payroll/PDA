@@ -1,4 +1,4 @@
-import { EmployeeJob } from "../db/schema/EmployeeJobSchema";
+import { EmployeeJob } from "../db/dbIndex.js";
 
 export const create = (req, res) => {
 	const employeeJob = {

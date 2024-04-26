@@ -1,4 +1,4 @@
-import { Sequelize, Op } from "sequelize";
+import { DataTypes, Sequelize, Op } from "sequelize";
 
 import { sequelize } from "../lib/sequelizeUtils.js";
 import { BillingInfo } from "./schema/BillingInfoSchema.js";
@@ -7,7 +7,22 @@ import { Job } from "./schema/JobSchema.js";
 import { Leave } from "./schema/LeaveSchema.js";
 import { PunchCard } from "./schema/PunchCardSchema.js";
 
-// associ
+export const EmployeeJob = sequelize.define("EmployeeJob", {
+	EmployeeId: {
+		type: DataTypes.INTEGER,
+		references: {
+			mode: Employee,
+			key: "id",
+		},
+	},
+	JobId: {
+		type: DataTypes.INTEGER,
+		references: {
+			model: Job,
+			key: "id",
+		},
+	},
+});
 
 const setSupvisorRelationship = () => {
 	Employee.hasMany(Employee, { foreignKey: "supervisorId" });
@@ -48,9 +63,9 @@ const LeaveRequest = () => {
 	Leave.belongsToMany(Employee, { through: "LeaveRequest" });
 };
 
-const Promotion = () => {
-	Employee.belongsToMany(Job, { through: "Promotion" });
-	Job.belongsToMany(Employee, { through: "Promotion" });
+export const AssociateEmployeeJob = () => {
+	Employee.belongsToMany(Job, { through: "EmployeeJob" });
+	Job.belongsToMany(Employee, { through: "EmployeeJob" });
 };
 
 const setupAssociation = () => {
@@ -63,7 +78,6 @@ const setupAssociation = () => {
 	AssociateEmployeeWithPunchCard();
 
 	LeaveRequest();
-	Promotion();
 };
 
 export {

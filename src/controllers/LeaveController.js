@@ -1,4 +1,4 @@
-import { Leave } from "../db/dbIndex";
+import { Leave } from "../db/dbIndex.js";
 
 export const create = (req, res) => {
 	const leave = {

@@ -1,4 +1,4 @@
-import { Op, PunchCard } from "../db/dbIndex";
+import { Op, PunchCard } from "../db/dbIndex.js";
 
 export const create = (req, res) => {
 	const punchCard = {

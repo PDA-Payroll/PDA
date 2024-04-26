@@ -2,8 +2,7 @@ import { Sequelize } from "sequelize";
 
 import * as config from "../constants.js";
 import { sleep } from "./misc.js";
-import { setupAssociation } from "../db/dbIndex.js";
-import { AssociateEmployeeJob } from "../db/schema/EmployeeJobSchema.js";
+import { AssociateEmployeeJob, setupAssociation } from "../db/dbIndex.js";
 
 //database connection
 export const sequelize = new Sequelize(

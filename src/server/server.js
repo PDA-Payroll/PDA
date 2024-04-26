@@ -8,6 +8,11 @@ import * as errorCodes from "./errorCodes.js";
 import { initDbConnection } from "../lib/sequelizeUtils.js";
 import { employeeRouting } from "../routing/employeeRouting.js";
 import { billingInfoRouting } from "../routing/billingInfoRouting.js";
+import { authenticationRouting } from "../routing/authenticationRouting.js";
+import { employeeJobRouting } from "../routing/employeeJobRouting.js";
+import { jobRouting } from "../routing/jobRouting.js";
+import { leaveRouting } from "../routing/leaveRouting.js";
+import { punchCardRouting } from "../routing/punchCardRouting.js";
 
 const app = express();
 
@@ -30,8 +35,13 @@ app.get("/", (req, res) => {
 	res.sendFile(errorCodes.error418);
 });
 
-employeeRouting(app);
+authenticationRouting(app);
 billingInfoRouting(app);
+employeeRouting(app);
+employeeJobRouting(app);
+jobRouting(app);
+leaveRouting(app);
+punchCardRouting(app);
 
 app.listen(PORT, () => {
 	console.log(`server listening on port: ${PORT}`);
