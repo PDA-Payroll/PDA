@@ -47,9 +47,12 @@ const Promotion = () => {
 
 const setupAssociation = () => {
 	setSupvisorRelationship();
+
 	associateBillingInfoWithEmployee();
 	associateEmployeeWithBillingInfo();
+
 	associatePunchCardWithEmployee();
+
 	LeaveRequest();
 	Promotion();
 };
