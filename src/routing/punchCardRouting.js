@@ -7,4 +7,8 @@ export const punchCardRouting = (app) => {
 	app.use("/punchCard", router);
 
 	router.post("/post/create", PunchCard.create);
+
+	router.post("/post/update", PunchCard.updatePunchCard);
+
+	router.get("/get/findByDate/:date", PunchCard.findPunchCardByDate);
 };

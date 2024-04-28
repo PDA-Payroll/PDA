@@ -1,4 +1,5 @@
 import { Op, PunchCard } from "../db/dbIndex.js";
+import { updateByPk } from "../lib/controllerLib.js";
 
 export const create = (req, res) => {
 	const punchCard = {
@@ -17,6 +18,26 @@ export const create = (req, res) => {
 		});
 };
 
+export const updatePunchCard = updateByPk(PunchCard);
+
+export const findPunchCardByDate = (req, res) => {
+	const date = req.params.date;
+
+	PunchCard.findAll({
+		where: {
+			date: date,
+		},
+	})
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			res.state(500).send({
+				message: err.message || "Error occurred while finding punchard",
+			});
+		});
+};
+
 // findTotalNumberHoursWorked :: dateRange -> hours
 export const findTotalNumberHoursWorked = (req, res) => {
 	const dateRange = {
@@ -25,7 +46,7 @@ export const findTotalNumberHoursWorked = (req, res) => {
 	};
 	PunchCard.sum({
 		where: {
-			createdAt: {
+			date: {
 				[Op.between]: [dateRange.startDate, dateRange.endDate],
 			},
 		},
