@@ -18,9 +18,13 @@ export const authenticate = (req, res) => {
 				res.send({
 					status: 200,
 					message: "auth success",
+					employeeInfo: data,
 				});
 			} else {
-				res.send(data);
+				res.send({
+					status: 400,
+					message: "incorrect username or password",
+				});
 			}
 		})
 		.catch(() => {
