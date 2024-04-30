@@ -14,10 +14,10 @@ export const authenticate = (req, res) => {
 		},
 	})
 		.then((data) => {
-			if (data.length === 0) {
+			if (data.id) {
 				res.send({
-					message:
-						"Incorrect Username or Password.  Please try again or contact the sysadmin",
+					status: 200,
+					message: "auth success",
 				});
 			} else {
 				res.send(data);
