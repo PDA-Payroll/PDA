@@ -14,7 +14,7 @@ export const authenticate = (req, res) => {
 		},
 	})
 		.then((data) => {
-			if (data.id) {
+			if (data) {
 				res.send({
 					status: 200,
 					message: "auth success",
