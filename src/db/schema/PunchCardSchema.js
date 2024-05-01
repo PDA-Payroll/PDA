@@ -3,7 +3,11 @@ import { sequelize } from "../dbIndex.js";
 
 export const PunchCard = sequelize.define("PunchCard", {
 	// This is in hours
-	date: {
+	dateIn: {
+		type: DataTypes.DATE,
+		allowNull: false,
+	},
+	dateOut: {
 		type: DataTypes.DATE,
 		allowNull: false,
 	},

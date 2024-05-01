@@ -4,7 +4,8 @@ import { updateByPk } from "../lib/controllerLib.js";
 export const create = (req, res) => {
 	const punchCard = {
 		EmployeeId: req.body.employeeId,
-		date: req.body.date,
+		dateIn: req.body.dateIn,
+		dateOut: req.body.dateOut,
 		timeWorked: req.body.timeWorked,
 	};
 	PunchCard.create(punchCard)
