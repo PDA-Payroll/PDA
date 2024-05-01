@@ -26,6 +26,10 @@ export const Employee = sequelize.define("Employee", {
 		type: DataTypes.BOOLEAN,
 		defaultValue: false,
 	},
+	isSupervisor: {
+		type: DataTypes.BOOLEAN,
+		defaultValue: false,
+	},
 	socialSecurityNumber: {
 		type: DataTypes.INTEGER,
 		allowNull: false,
