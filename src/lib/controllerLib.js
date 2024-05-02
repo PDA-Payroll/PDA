@@ -21,7 +21,7 @@ export const findAllOfObject = (Entity) => (field) => (req, res) => {
 		});
 };
 
-// findByPk :: Object -> (req, res) -> void
+// findByPk :: Object -> (req, res) -> Object
 export const findObjectByPk = (Entity) => (req, res) => {
 	const id = req.params.id;
 
@@ -42,6 +42,7 @@ export const findObjectByPk = (Entity) => (req, res) => {
 		});
 };
 
+// updateByPk :: Object -> (req, res) -> void
 export const updateByPk = (Entity) => (req, res) => {
 	const id = req.params.id;
 
