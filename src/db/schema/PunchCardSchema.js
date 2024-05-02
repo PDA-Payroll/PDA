@@ -11,10 +11,6 @@ export const PunchCard = sequelize.define("PunchCard", {
 		type: DataTypes.DATE,
 		allowNull: false,
 	},
-	timeWorked: {
-		type: DataTypes.FLOAT,
-		allowNull: false,
-	},
 	approvalStatus: {
 		type: DataTypes.STRING,
 		defaultValue: "pending",
