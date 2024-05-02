@@ -17,6 +17,7 @@ export const create = (req, res) => {
 		employeeUserName: req.body.employeeUserName,
 		employeePassword: req.body.employeePassword,
 		isAdmin: req.body.isAdmin,
+		isSupervisor: req.body.isSupervisor,
 		socialSecurityNumber: req.body.socialSecurityNumber,
 		supervisorId: req.body.supervisorId,
 	};
