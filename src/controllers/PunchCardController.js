@@ -1,5 +1,5 @@
 import { Op, PunchCard } from "../db/dbIndex.js";
-import { updateByPk } from "../lib/controllerLib.js";
+import { deleteAll, updateByPk } from "../lib/controllerLib.js";
 
 export const create = (req, res) => {
 	const punchCard = {
@@ -38,6 +38,9 @@ export const findPunchCardByDate = (req, res) => {
 			});
 		});
 };
+
+// deleteAllPunchCards :: void -> void
+export const deleteAllPunchCards = deleteAll(PunchCard);
 
 // findTotalNumberHoursWorked :: dateRange -> hours
 export const findTotalNumberHoursWorked = (req, res) => {

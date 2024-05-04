@@ -10,5 +10,7 @@ export const punchCardRouting = (app) => {
 
 	router.post("/post/update", PunchCard.updatePunchCard);
 
+	router.delete("/delete/all", PunchCard.deleteAllPunchCards);
+
 	router.get("/get/findByDate/:date", PunchCard.findPunchCardByDate);
 };
