@@ -53,6 +53,23 @@ export const findEmployeeByUsername = (req, res) => {
 		});
 };
 
+export const findEmployeesBySupervisorId = (req, res) => {
+	const supervisorId = req.params.supervisorId;
+	var condition = username
+		? { supervisorId: { [Op.like]: `%${supervisorId}%` } }
+		: null;
+
+	Employee.findOne({ where: condition })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			res.status(500).send({
+				message: err.message || "An error occurred while searching username",
+			});
+		});
+};
+
 export const deleteEmployeeById = deleteObjectById(Employee);
 
 export const deleteAllEmployees = deleteAll(Employee);

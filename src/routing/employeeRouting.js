@@ -14,6 +14,11 @@ export const employeeRouting = (app) => {
 
 	router.get("/get/username/:username", employee.findEmployeeByUsername);
 
+	router.get(
+		"/get/supervisor/:supervisoriD",
+		employee.findEmployeesBySupervisorId,
+	);
+
 	router.delete("/delete/all", employee.deleteAllEmployees);
 
 	router.delete("/delete/:id", employee.deleteEmployeeById);
