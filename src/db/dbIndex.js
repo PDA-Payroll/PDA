@@ -30,9 +30,13 @@ const setSupvisorRelationship = () => {
 };
 // associateManyWithEmployee :: model -> modelAssociatedWithEmployee
 const associateManyWithEmployee = (model) => {
-	Employee.hasMany(model, {
-		onDelete: "cascade",
-	});
+	Employee.hasMany(
+		model,
+		{ allowNull: false },
+		{
+			onDelete: "cascade",
+		},
+	);
 };
 
 // associateBillingInfo :: BillingInfo -> BillingInfoAssociatedWithEmployee
