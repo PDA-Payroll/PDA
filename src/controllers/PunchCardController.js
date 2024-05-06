@@ -6,7 +6,6 @@ export const create = (req, res) => {
 		EmployeeId: req.body.employeeId,
 		dateIn: req.body.dateIn,
 		dateOut: req.body.dateOut,
-		timeWorked: req.body.timeWorked,
 	};
 	PunchCard.create(punchCard)
 		.then((data) => {
