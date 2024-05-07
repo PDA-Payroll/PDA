@@ -15,7 +15,7 @@ export const employeeRouting = (app) => {
 	router.get("/get/username/:username", employee.findEmployeeByUsername);
 
 	router.get(
-		"/get/supervisor/:supervisoriD",
+		"/get/supervisor/:supervisorId",
 		employee.findEmployeesBySupervisorId,
 	);
 
