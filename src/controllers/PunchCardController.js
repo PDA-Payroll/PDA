@@ -41,15 +41,15 @@ export const findPunchCardByDate = (req, res) => {
 // deleteAllPunchCards :: void -> void
 export const deleteAllPunchCards = deleteAll(PunchCard);
 
-// findTotalNumberHoursWorked :: dateRange -> hours
-export const findTotalNumberHoursWorked = (req, res) => {
+// findAllPunchCardsInRange :: dateRange -> hours
+export const findAllPunchCardsInRange = (req, res) => {
 	const dateRange = {
-		startDate: req.body.startDate,
-		endDate: req.body.endDate,
+		startDate: req.params.startDate,
+		endDate: req.params.endDate,
 	};
-	PunchCard.sum({
+	PunchCard.findAll({
 		where: {
-			date: {
+			dateOut: {
 				[Op.between]: [dateRange.startDate, dateRange.endDate],
 			},
 		},
